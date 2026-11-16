@@ -1,0 +1,247 @@
+/* ===== avant de faire la mise en page, on défini la palette de couleur du site ===== */
+:root{
+  --lin:#F5F0E4;        /* lin (fond) */
+  --toile:#EBE4D2;      /* toile écrue */
+  --pierre:#D9D0BD;     /* pierre */
+  --paper:#FBF8F1;      /* cartes */
+  --ink:#2F2D24;        /* texte */
+  --olive:#5B6140;      /* vert olive */
+  --olive-d:#3E4429;    /* olive profond */
+  --sage:#8D936C;       /* olive clair */
+  --lav:#B7A9D0;        /* lavande (touches) */
+  --lavd:#7E6FA3;
+  --line:rgba(62,68,41,.22);
+  --shadow:0 14px 34px rgba(62,68,41,.10);
+  /* ensuite, on insère les images en rentrant le lien des images : branche d'olivier sur fond olive */
+  --sprig:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cg fill='none' stroke='%23F5F0E4' stroke-width='1' opacity='.22'%3E%3Cpath d='M20 100C40 70 50 40 62 14'/%3E%3Cpath d='M62 14c-10 6-12 14-10 22 8-4 12-12 10-22zM46 44c-10 2-16 8-18 16 9 0 16-6 18-16zM52 30c9 0 15 4 18 11-9 1-15-3-18-11zM38 62c9-1 14 3 17 9-8 2-14-1-17-9zM30 80c-8 0-13 4-15 10 8 1 13-2 15-10z'/%3E%3C/g%3E%3Cg fill='%23B7A9D0' opacity='.4'%3E%3Ccircle cx='92' cy='84' r='2'/%3E%3Ccircle cx='98' cy='92' r='2'/%3E%3Ccircle cx='88' cy='94' r='2'/%3E%3C/g%3E%3C/svg%3E");
+  /* branche d'olivier sur fond clair */
+  --sprig-d:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cg fill='none' stroke='%233E4429' stroke-width='1' opacity='.2'%3E%3Cpath d='M20 100C40 70 50 40 62 14'/%3E%3Cpath d='M62 14c-10 6-12 14-10 22 8-4 12-12 10-22zM46 44c-10 2-16 8-18 16 9 0 16-6 18-16zM52 30c9 0 15 4 18 11-9 1-15-3-18-11zM38 62c9-1 14 3 17 9-8 2-14-1-17-9zM30 80c-8 0-13 4-15 10 8 1 13-2 15-10z'/%3E%3C/g%3E%3Cg fill='%237E6FA3' opacity='.3'%3E%3Ccircle cx='92' cy='84' r='2'/%3E%3Ccircle cx='98' cy='92' r='2'/%3E%3Ccircle cx='88' cy='94' r='2'/%3E%3C/g%3E%3C/svg%3E");
+  color-scheme:light;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+ 
+/*style global*/
+/* ===== base (mise en page globale) ===== */
+*{box-sizing:border-box}
+/*scroll sur la page de manière fluide*/
+html{scroll-behavior:smooth}
+/* définition de la taille, couleur et police des textes */
+body{margin:0;color:var(--ink);font:300 17px/1.75 Jost,system-ui,sans-serif;
+  /*fond*/
+  background:repeating-linear-gradient(0deg,rgba(62,68,41,.03) 0 1px,transparent 1px 3px),repeating-linear-gradient(90deg,rgba(62,68,41,.03) 0 1px,transparent 1px 3px),var(--lin)}
+/*définition taille, couleurs et polices des titres*/
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;color:var(--olive-d);margin:0 0 .6em;line-height:1.1}
+
+/*première case, chagement de couleur quand la souris passe dessu*/
+h1{font-size:clamp(2.8rem,7vw,5.2rem);font-weight:500;color:var(--lin)}
+h1 em{display:block;font-weight:400}
+h2{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:500;text-transform:uppercase;letter-spacing:.1em}
+
+/* élément de style après le deuxième titre ("bienvenue") */
+h2::after{content:"";display:block;width:140px;height:9px;margin-top:.9rem;
+  background:linear-gradient(currentColor,currentColor) left center/52px 1px no-repeat,linear-gradient(currentColor,currentColor) right center/52px 1px no-repeat,radial-gradient(circle,var(--lav) 3.2px,transparent 3.7px) center/9px 9px no-repeat;opacity:.9}
+h3{font-size:1.6rem;font-weight:500;font-style:italic}
+p{max-width:62ch}
+.eyebrow{font:500 .72rem Jost,sans-serif;letter-spacing:.3em;text-transform:uppercase;color:#D8CFEA;margin:0 0 1.4rem}
+ 
+/* ===== MENU ===== */
+/*style et disposition des onglets visibles sur l'accueil*/
+nav{position:sticky;top:0;z-index:5;display:flex;gap:2rem;align-items:center;overflow-x:auto;padding:.9rem 1.6rem;background:rgba(245,240,228,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav b{margin-right:auto;font:italic 500 1.35rem "Cormorant Garamond",serif;width:40px;height:48px;border:1px solid var(--olive);border-radius:50%;display:grid;place-items:center;flex:none}
+nav b a{color:var(--olive-d);border:0;padding:0;letter-spacing:0;text-transform:none;font:inherit}
+nav a{color:var(--ink);text-decoration:none;white-space:nowrap;font:500 .72rem Jost,sans-serif;letter-spacing:.18em;text-transform:uppercase;padding:.4rem 0;border-bottom:1px solid transparent}
+nav a:hover{color:var(--olive)}
+nav a.on{color:var(--olive-d);border-bottom-color:var(--olive-d)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--lavd);outline-offset:3px}
+ 
+/* ===== ONGLETS ===== */
+section{padding:5rem 1.6rem;max-width:1100px;margin:auto}
+section.tab{display:none}
+section.tab.active{display:block}
+ 
+/* ===== ACCUEIL ===== */
+/*style global de la page d'accueuil (éléments, couleurs, banières...)*/
+.accueil{max-width:none;padding:0}
+.wrap{max-width:1100px;margin:auto;padding:5rem 1.6rem}
+.banner{min-height:78vh;display:grid;place-items:center;text-align:center;padding:5rem 1.6rem;color:var(--lin);
+  background:linear-gradient(rgba(36,41,22,.58),rgba(36,41,22,.72)),var(--img,none) center/cover,var(--olive-d)}
+.banner .lead{font-size:1.15rem;margin:0 auto 2.2rem;color:#EFE9DA}
+.banner .btn{background:var(--lin);color:var(--olive-d);border-color:var(--lin)}
+.banner .btn.alt{background:transparent;color:var(--lin)}
+.toile-band{background:var(--sprig),var(--olive);padding:3.6rem 1.6rem;text-align:center}
+.toile-band p{margin:0 auto;font:italic 400 clamp(1.4rem,3.4vw,2rem)/1.4 "Cormorant Garamond",serif;color:var(--lin);max-width:34ch}
+.intro{display:grid;grid-template-columns:minmax(220px,340px) 1fr;gap:4.5rem;align-items:center}
+.arch{aspect-ratio:3/4;width:100%;border-radius:999px 999px 0 0;border:9px solid var(--paper);outline:1px solid var(--olive);outline-offset:8px;box-shadow:var(--shadow);background:var(--img,none) center/cover,var(--sprig-d),var(--pierre)}
+ 
+/* ===== MOSAÏQUE ===== */
+/* en bas de la page d'acceuil : mosaîque de photos (pas encore déposées)*/
+.mosaic{columns:3 220px;column-gap:1.3rem;margin-top:2.2rem}
+.ph{break-inside:avoid;margin-bottom:1.3rem;border:9px solid var(--paper);border-radius:2px;box-shadow:var(--shadow);min-height:180px;background:var(--img,none) center/cover,var(--sprig-d),var(--pierre)}
+ 
+/* ===== BOUTONS ===== */
+/*la façon dont les cases de la page d'acceuil (ex "faire le test") réagissent quand on passe dessus (changent de couleur)*/
+.btn{display:inline-block;background:var(--olive-d);color:var(--lin);border:1px solid var(--olive-d);padding:.85rem 1.8rem;border-radius:2px;font:500 .74rem Jost,sans-serif;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:background .25s,color .25s}
+.btn:hover{background:var(--olive)}
+.btn.alt{background:transparent;color:var(--olive-d)}
+.btn.alt:hover{background:var(--olive-d);color:var(--lin)}
+.banner .btn:hover{background:#fff;color:var(--olive-d)}
+ 
+/* ===== BANDEAUX ===== */
+/*premier bandeau de la page d'acceuil (couleur, texte, bordure)*/
+.band{background:var(--toile);max-width:none;border-block:1px solid var(--line)}
+.band>div{max-width:1100px;margin:auto}
+.olive{background:var(--sprig),var(--olive);border:0;color:var(--lin)}
+.olive>div>h2,.olive>div>p{color:var(--lin)}
+.olive .btn.alt{color:var(--lin);border-color:var(--lin)}
+.olive .btn.alt:hover{background:var(--lin);color:var(--olive-d)}
+ 
+/* ===== VESTIAIRE ===== */
+/*onglet "vestiaire" : style globale*/
+.vest{display:grid;grid-template-columns:minmax(220px,330px) 1fr;gap:3rem;align-items:start;margin-top:2rem}
+.vest svg{width:100%;height:auto;background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow)}
+/*jeu : pointer le curseur sur une partie d'un vêtement pour en  découvrir l'origine*/
+.hot{cursor:pointer;fill:var(--lav);fill-opacity:.4;stroke:var(--lavd);stroke-width:1.5;stroke-dasharray:4 4}
+.hot:hover,.hot.on{fill:var(--olive);fill-opacity:.85;stroke-dasharray:none}
+.body{fill:var(--sage);opacity:.35}
+.info{background:var(--paper);padding:1.8rem 2rem;min-height:15rem;box-shadow:var(--shadow);border:1px solid var(--line)}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.3rem}
+.chip{background:transparent;border:1px solid var(--olive);color:var(--olive-d);padding:.45rem 1.1rem;border-radius:99px;cursor:pointer;font:400 .9rem Jost,sans-serif}
+.chip:hover{background:var(--toile)}
+.chip.on{background:var(--olive-d);color:var(--lin)}
+ 
+/* ===== MATIÈRES / CARTES ===== */
+/*onglet "les matières" : style global et disposition des cadres explicatifs*/
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.6rem;margin-top:2.2rem}
+.mat{background:var(--paper);padding-bottom:1.6rem;box-shadow:var(--shadow);color:var(--ink)}
+.mat::before{content:"";display:block;height:120px;background:var(--sprig-d),var(--c);margin-bottom:1.2rem}
+.mat h3,.mat p{padding:0 1.5rem;margin-top:0}
+.mat h3{margin-bottom:.4rem}
+.mat p{margin:0;font-size:.97rem}
+.card{background:var(--paper);padding:1.9rem;box-shadow:var(--shadow);border:1px solid var(--line)}
+.card h3{margin-bottom:.3em}
+ 
+/* ===== VRAI / FAUX ===== */
+/*onglet "les histoires" : style global de la page et du jeu "vai ou faux"*/
+.vf{background:var(--paper);padding:1.5rem 1.8rem;margin-bottom:1rem;border:1px solid var(--line);border-left:3px solid var(--lav)}
+.vf p{margin:.2rem 0 1rem}
+.vf .rep{display:none;margin-top:1.1rem;padding-left:1rem;border-left:1px solid var(--olive)}
+.vf.open .rep{display:block}
+.vf button{margin-right:.5rem}
+ 
+/* ===== TEST ===== */
+/*cases "vrai" et "faux" qui changent de couleurs lorsqu'on passe dessus*/
+.opt{display:block;width:100%;text-align:left;background:var(--lin);border:1px solid var(--line);color:var(--ink);padding:.85rem 1.1rem;margin:.55rem 0;cursor:pointer;font:300 1rem Jost,sans-serif}
+.opt:hover{border-color:var(--olive);background:#fff}
+.res{border:1px solid var(--olive);padding:1.7rem;background:var(--lin);outline:1px solid var(--line);outline-offset:5px}
+ 
+/* ===== ÉTIQUETTE ===== */
+/*petite bordure à gauche des cadres qui contiennent les question du "vrai ou faux"*/
+.pill{display:inline-block;background:rgba(183,169,208,.28);color:var(--olive-d);border:1px solid var(--lav);padding:.2rem .85rem;border-radius:99px;font:500 .68rem Jost,sans-serif;letter-spacing:.18em;text-transform:uppercase}
+ 
+/* ===== PIED DE PAGE : bord en dentelle ===== */
+/*page d'acceuil : pied de page dentellé*/
+footer{position:relative;margin-top:4rem;padding:3.5rem 1.6rem;text-align:center;background:var(--olive-d);color:#E4DDCB}
+footer::before{content:"";position:absolute;left:0;right:0;top:-10px;height:10px;background:radial-gradient(circle at 10px 10px,var(--olive-d) 10px,transparent 10.5px) 0 0/20px 10px repeat-x}
+footer p{margin:.3rem auto}
+footer .small{font-size:.85rem;opacity:.7}
+.monogram{display:inline-grid;place-items:center;width:46px;height:56px;border:1px solid var(--lav);border-radius:50%;font:italic 500 1.5rem "Cormorant Garamond",serif;color:var(--lin);margin-bottom:1rem}
+ 
+/* ===== MOBILE ===== */
+/*optimisation du site sur téléphone*/
+@media(max-width:760px){
+  .intro,.vest{grid-template-columns:1fr;gap:2.5rem}
+  .banner{min-height:70vh}
+  section,.wrap{padding:3.2rem 1.2rem}
+  .accueil{padding:0}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+
+
+.hero-photo img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+/* Sections du dessous */
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.bloc {
+  padding: 48px 0;
+  border-top: 1px solid var(--noir);
+  scroll-margin-top: 80px;
+}
+
+.bloc h2 {
+  font-family: var(--police-nom);
+  font-weight: normal;
+  font-size: 1.8rem;
+  margin-bottom: 14px;
+}
+
+.bloc p {
+  margin-bottom: 8px;
+}
+
+.bloc ul {
+  padding-left: 20px;
+}
+
+.bloc a {
+  color: var(--noir);
+}
+
+.bloc a:hover {
+  color: var(--orange);
+}
+
+.etiquettes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  padding-left: 0;
+}
+
+.etiquettes li {
+  padding: 6px 16px;
+  border: 2px solid var(--orange);
+  border-radius: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 32px 20px;
+}
+
+/* Téléphone et petits écrans : tout passe en colonne */
+@media (max-width: 800px) {
+  .barre {
+    flex-direction: column;
+    padding: 16px 20px;
+  }
+
+  nav {
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 32px 24px 80px;
+    min-height: auto;
+  }
+
+  .hero-photo::after {
+    right: -20px;
+    bottom: -20px;
+  }
+}

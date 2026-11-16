@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vêtement provençal – patrimoine à porter</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+ vghgfc
+
+<!-- MENU -->
+<nav>
+  <b><a href="#accueil" aria-label="Accueil">VP</a></b>
+  <a href="#accueil">Accueil</a>
+  <a href="#vestiaire">Le vestiaire</a>
+  <a href="#histoires">Les histoires</a>
+  <a href="#matieres">Les matières</a>
+  <a href="#ludotheque">Ludothèque</a>
+  <a href="#gout-du-jour">Au goût du jour</a>
+</nav>
+
+
+<!-- ONGLET 1 : ACCUEIL -->
+<section id="accueil" class="tab accueil">
+
+
+  <!-- Bannière : mets ta photo dans images/hero.jpg -->
+  <header class="banner" style="--img:url(images/hero.jpg)">
+    <div>
+      <p class="eyebrow">Patrimoine · Mode · Provence</p>
+      <h1>Le vêtement provençal, <em>version 2026</em></h1>
+      <p class="lead">Fichu, coiffe, boutis, indienne : des pièces qui ont une histoire, des gestes et des secrets. Découvre-les, joue avec, puis reconnais-les dans la mode d’aujourd’hui.</p>
+      <p>
+        <a class="btn" href="#vestiaire">Ouvrir le vestiaire</a>
+        <a class="btn alt" href="#ludotheque">Faire le test</a>
+      </p>
+    </div>
+  </header>
+
+
+  <!-- Bandeau toile -->
+  <div class="toile-band">
+    <p>Du fichu à la coiffe, chaque pièce raconte un savoir-faire.</p>
+  </div>
+
+
+  <!-- Bienvenue : mets ta photo dans images/arche.jpg -->
+  <div class="wrap intro">
+    <div class="arch" style="--img:url(images/arche.jpg)" role="img" aria-label="Pierre et lumière de Provence"></div>
+    <div>
+      <h2>Bienvenue</h2>
+      <p>Ce site raconte le vêtement provençal comme un art vivant : des matières nobles, des gestes transmis de main en main, des silhouettes que l’on retrouve aujourd’hui dans la rue, en friperie ou sur les podiums.</p>
+      <p>Pas de musée poussiéreux ici. Explore le vestiaire, teste tes connaissances et découvre quelle pièce du costume te ressemble.</p>
+      <p><a class="btn alt" href="#histoires">Lire les histoires</a></p>
+    </div>
+  </div>
+
+
+  <!-- Ambiances : images/m1.jpg à m6.jpg -->
+  <div class="wrap" style="padding-top:0">
+    <h2>Ambiances</h2>
+    <div class="mosaic">
+      <div class="ph" style="--img:url(images/m1.jpg);height:240px"></div>
+      <div class="ph" style="--img:url(images/m2.jpg);height:320px"></div>
+      <div class="ph" style="--img:url(images/m3.jpg);height:260px"></div>
+      <div class="ph" style="--img:url(images/m4.jpg);height:330px"></div>
+      <div class="ph" style="--img:url(images/m5.jpg);height:230px"></div>
+      <div class="ph" style="--img:url(images/m6.jpg);height:290px"></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ONGLET 2 : LE VESTIAIRE -->
+<section id="vestiaire" class="tab">
+  <h2>Le vestiaire provençal</h2>
+  <p>Touche une pièce pour découvrir ce qu’elle raconte.</p>
+  <div class="vest">
+    <svg viewBox="0 0 300 460" role="group" aria-label="Silhouette interactive">
+      <circle class="body" cx="150" cy="90" r="34"/>
+      <rect class="body" x="132" y="120" width="36" height="24"/>
+      <path class="body" d="M95 150 Q150 130 205 150 L215 270 L85 270Z"/>
+      <path class="body" d="M85 270 L215 270 L250 440 L50 440Z"/>
+      <!-- data-k doit correspondre à une clé de "const P" dans script.js -->
+      <path class="hot" data-k="coiffe" d="M118 72 Q150 36 182 72 Q150 88 118 72Z" tabindex="0"/>
+      <path class="hot" data-k="fichu" d="M100 148 Q150 175 200 148 L150 215Z" tabindex="0"/>
+      <path class="hot" data-k="veste" d="M92 215 L208 215 L212 268 L88 268Z" tabindex="0"/>
+      <path class="hot" data-k="jupon" d="M86 275 L214 275 L246 435 L54 435Z" tabindex="0"/>
+    </svg>
+    <div>
+      <div class="chips" id="chips"></div>
+      <div class="info" id="info" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ONGLET 3 : LES MATIÈRES -->
+<section id="matieres" class="band olive tab"><div>
+  <h2>Les secrets du textile</h2>
+  <p>Un costume, c’est d’abord des fibres, des couleurs et des gestes.</p>
+  <div class="grid">
+    <div class="mat" style="--c:#A8AE8A"><h3>La garance</h3><p>La racine de cette plante tinctoriale donne le rouge des tissus provençaux. Elle était cultivée en masse dans le Vaucluse, autour d’Avignon, au XIXe siècle.</p></div>
+    <div class="mat" style="--c:#CFC5E0"><h3>L’indienne</h3><p>Un coton imprimé de motifs colorés. Interdite de 1686 à 1759 pour protéger la soie française, elle a nourri un immense marché noir en Provence.</p></div>
+    <div class="mat" style="--c:#E3D9C2"><h3>Le boutis</h3><p>Un matelassage cousu à la main, motif par motif. On glisse des mèches de coton entre deux toiles blanches pour créer du relief.</p></div>
+    <div class="mat" style="--c:#C9C0AA"><h3>Le denim</h3><p>« De Nîmes » : cette toile très résistante a été exportée dans le monde entier avant de devenir la base du streetwear.</p></div>
+  </div>
+  <p style="margin-top:2.5rem"><a class="btn alt" href="#ludotheque">Quiz « Reconnais-tu ce tissu ? » (à venir)</a></p>
+</div></section>
+
+
+<!-- ONGLET 4 : LES HISTOIRES -->
+<section id="histoires" class="tab">
+  <h2>Les histoires</h2>
+  <p>Anecdotes, fêtes, symboles. Pour commencer : vrai ou faux ?</p>
+  <div id="vfs"></div>
+</section>
+
+
+<!-- ONGLET 5 : LUDOTHÈQUE -->
+<section id="ludotheque" class="band tab"><div>
+  <h2>La ludothèque</h2>
+  <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
+    <div class="card" id="quiz"></div>
+    <div>
+      <div class="card" style="margin-bottom:1.5rem">
+        <span class="pill">Mots croisés</span>
+        <h3 style="margin-top:.8rem">La Provence</h3>
+        <p>Grille de 10 mots sur le mistral, la cigale, l’aïoli, la lavande… À intégrer en PDF ou en version jouable.</p>
+      </div>
+      <div class="card">
+        <span class="pill">Bientôt</span>
+        <h3 style="margin-top:.8rem">Habille ton provençal</h3>
+        <p>Une silhouette féminine et une masculine à habiller avec les pièces du costume traditionnel.</p>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+
+<!-- ONGLET 6 : AU GOÛT DU JOUR -->
+<section id="gout-du-jour" class="tab">
+  <h2>La Provence au goût du jour</h2>
+  <p>Le fichu devient accessoire de rue, le boutis se retrouve sur les vestes oversize et l’indienne revient sur les imprimés des créateurs. Comment le patrimoine habille-t-il la génération 20-30 ans ? C’est l’article principal du site : designers, friperies, seconde main et tutos pour porter la Provence sans costume.</p>
+  <p><a class="btn">Lire l’article (à rédiger)</a></p>
+</section>
+
+
+<footer>
+  <div class="monogram">VP</div>
+  <p>Projet tutoré L3 Culture et communication · Avignon</p>
+  <p class="small">Crédits photos et sources : à compléter</p>
+</footer>
+
+
+<script src="script.js"></script>
+</body>
+</html>
